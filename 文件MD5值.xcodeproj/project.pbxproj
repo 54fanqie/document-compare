@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A43598F1D2A69E0009E9434 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A43598E1D2A69E0009E9434 /* Resources.bundle */; };
 		7A5F3D821D26531000F503AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3D811D26531000F503AF /* main.m */; };
 		7A5F3D851D26531000F503AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3D841D26531000F503AF /* AppDelegate.m */; };
 		7A5F3D881D26531000F503AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3D871D26531000F503AF /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		7A5F3D901D26531000F503AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5F3D8E1D26531000F503AF /* LaunchScreen.storyboard */; };
 		7A5F3D9B1D26531000F503AF /* __MD5_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3D9A1D26531000F503AF /* __MD5_Tests.m */; };
 		7A5F3DA61D26531000F503AF /* __MD5_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3DA51D26531000F503AF /* __MD5_UITests.m */; };
+		7A5F3DB61D2653A000F503AF /* FileHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3DB51D2653A000F503AF /* FileHash.m */; };
+		7A5F3DBC1D26626500F503AF /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5F3DBB1D26626500F503AF /* SandboxFile.m */; };
+		7A83F7561D2A3DA000355169 /* FileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A83F7551D2A3DA000355169 /* FileObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A43598E1D2A69E0009E9434 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 		7A5F3D7D1D26530F00F503AF /* 文件MD5值.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "文件MD5值.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5F3D811D26531000F503AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A5F3D831D26531000F503AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,12 @@
 		7A5F3DA11D26531000F503AF /* 文件MD5值UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "文件MD5值UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5F3DA51D26531000F503AF /* __MD5_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __MD5_UITests.m; sourceTree = "<group>"; };
 		7A5F3DA71D26531000F503AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A5F3DB41D2653A000F503AF /* FileHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHash.h; sourceTree = "<group>"; };
+		7A5F3DB51D2653A000F503AF /* FileHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHash.m; sourceTree = "<group>"; };
+		7A5F3DBA1D26626500F503AF /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
+		7A5F3DBB1D26626500F503AF /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
+		7A83F7541D2A3DA000355169 /* FileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileObject.h; sourceTree = "<group>"; };
+		7A83F7551D2A3DA000355169 /* FileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,8 @@
 		7A5F3D741D26530F00F503AF = {
 			isa = PBXGroup;
 			children = (
+				7A43598E1D2A69E0009E9434 /* Resources.bundle */,
+				7A5F3DB31D2653A000F503AF /* FileHash */,
 				7A5F3D7F1D26531000F503AF /* 文件MD5值 */,
 				7A5F3D991D26531000F503AF /* 文件MD5值Tests */,
 				7A5F3DA41D26531000F503AF /* 文件MD5值UITests */,
@@ -138,6 +151,20 @@
 				7A5F3DA71D26531000F503AF /* Info.plist */,
 			);
 			path = "文件MD5值UITests";
+			sourceTree = "<group>";
+		};
+		7A5F3DB31D2653A000F503AF /* FileHash */ = {
+			isa = PBXGroup;
+			children = (
+				7A5F3DB41D2653A000F503AF /* FileHash.h */,
+				7A5F3DB51D2653A000F503AF /* FileHash.m */,
+				7A5F3DBA1D26626500F503AF /* SandboxFile.h */,
+				7A5F3DBB1D26626500F503AF /* SandboxFile.m */,
+				7A83F7541D2A3DA000355169 /* FileObject.h */,
+				7A83F7551D2A3DA000355169 /* FileObject.m */,
+			);
+			name = FileHash;
+			path = "文件MD5值/FileHash";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +273,7 @@
 				7A5F3D901D26531000F503AF /* LaunchScreen.storyboard in Resources */,
 				7A5F3D8D1D26531000F503AF /* Assets.xcassets in Resources */,
 				7A5F3D8B1D26531000F503AF /* Main.storyboard in Resources */,
+				7A43598F1D2A69E0009E9434 /* Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5F3D881D26531000F503AF /* ViewController.m in Sources */,
+				7A5F3DBC1D26626500F503AF /* SandboxFile.m in Sources */,
+				7A5F3DB61D2653A000F503AF /* FileHash.m in Sources */,
+				7A83F7561D2A3DA000355169 /* FileObject.m in Sources */,
 				7A5F3D851D26531000F503AF /* AppDelegate.m in Sources */,
 				7A5F3D821D26531000F503AF /* main.m in Sources */,
 			);
@@ -496,6 +527,7 @@
 				7A5F3DAC1D26531000F503AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A5F3DAD1D26531000F503AF /* Build configuration list for PBXNativeTarget "文件MD5值Tests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +536,7 @@
 				7A5F3DAF1D26531000F503AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A5F3DB01D26531000F503AF /* Build configuration list for PBXNativeTarget "文件MD5值UITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +545,7 @@
 				7A5F3DB21D26531000F503AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

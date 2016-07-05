@@ -1,14 +1,15 @@
 //
-//  FileType.m
+//  FileObject.m
 //  文件MD5值
 //
 //  Created by macmini2 on 16/7/4.
 //  Copyright © 2016年 emiage. All rights reserved.
 //
 
-#import "FileType.h"
+#import "FileObject.h"
 
-@implementation FileType
+@implementation FileObject
+
 +(FileTypeEnum)typeOfFileName:(NSString *)fileName{
     NSString* extension = [[fileName pathExtension] lowercaseString];
     
@@ -48,14 +49,14 @@
 
 }
 
-
+//是否包含
 +(BOOL)isMatchedByRegularWith:(NSString*)fileName WithSuffix:(NSString*)suffixString{
     return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@",suffixString] evaluateWithObject:fileName];
 }
 
 
 
-- (NSString *)checkData1OfFile:(NSString *)filePath
++ (NSString *)checkData1OfFile:(NSString *)filePath
 {
     NSFileManager *file = [NSFileManager defaultManager];
     if ([file fileExistsAtPath:filePath]) {
@@ -68,13 +69,13 @@
             } else {
                 position = size / 3 + 1;
             }
-            return [self dataInFile:filePath atPosition:position length:10];
+            return [[self class] dataInFile:filePath atPosition:position length:10];
         }
     }
     return nil;
 }
 
--(NSString *)dataInFile:(NSString *)filePath atPosition:(unsigned long long)position length:(NSUInteger)length
++(NSString *)dataInFile:(NSString *)filePath atPosition:(unsigned long long)position length:(NSUInteger)length
 {
     NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:filePath];
     if (!file) {
@@ -82,12 +83,12 @@
     } else {
         [file seekToFileOffset:position];
         NSData *data = [file readDataOfLength:length];
-        return [self hexString:data];
+        return [[self class] hexString:data];
     }
 }
 
 
-- (NSString *)hexString:(NSData*)data
++ (NSString *)hexString:(NSData*)data
 {
     size_t length = 0;
     length = [data length];

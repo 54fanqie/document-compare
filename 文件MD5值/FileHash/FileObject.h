@@ -1,5 +1,5 @@
 //
-//  FileType.h
+//  FileObject.h
 //  文件MD5值
 //
 //  Created by macmini2 on 16/7/4.
@@ -22,7 +22,13 @@ typedef enum {
     FileTypePdf
 } FileTypeEnum;
 
-@interface FileType : NSObject
+@interface FileObject : NSObject
+/*
+判断文件类型
+ */
 +(FileTypeEnum)typeOfFileName:(NSString*)fileName;
-
+/*
+  上传文件之前如何判断服务器上面是否有相同的文件存在
+ */
++(NSString *)checkData1OfFile:(NSString *)filePath;
 @end
