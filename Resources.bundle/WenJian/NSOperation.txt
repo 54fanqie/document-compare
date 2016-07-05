@@ -1,0 +1,56 @@
+
+- (NSOperationQueuePriority)queuePriority;
+- (void)setQueuePriority:(NSOperationQueuePriority)p;
+工作之间也可有从属依赖关系，只有依赖的工作完成后才会执行：
+1
+2
+- (void)addDependency:(NSOperation *)op;
+- (void)removeDependency:(NSOperation *)op;
+还可以通过下面接口设置运行NSOpration的子线程优先级：
+1
+- (void)setQueuePriority:(NSOperationQueuePriority)priority;
+如果要设置Queue的并发操作数：
+1
+- (void)setMaxConcurrentOperationCount:(NSInteger)cnt;
+iOS4之后还可以往NSOperation上添加一个结束block，用于在工作执行结束之后的操作：
+1
+- (void)setCompletionBlock:(void (^)(void))block;
+如果需要阻塞等待NSOperation工作结束(别在主线程这么干)，可以使用接口：
+1
+- (void)waitUntilFinished;
+NSOperationQueue除了添加NSOperation外，也支持直接添加一个Block(iOS4之后)：
+1
+- (void)addOperationWithBlock:(void (^)(void))block
+NSOperationQueue可以取消所有添加的工作：
+1
+- (void)cancelAllOperations;
+也可以阻塞式的等待所有工作结束(别在主线程这么干)：
+1
+- (void)waitUntilAllOperationsAreFinished;
+在NSOperation对象中获得被添加的NSOperationQueue队列：
+1
++ (id)currentQueue
+要获得一个绑定在主线程的NSOperationQueue队列：
+1
++ (id)mainQueue
+还有些接口参考头文件NSOperation.h和NSOperation Class Reference，Apple的Class Reference文档描述还是很清晰的。
+NSInvocationOperation & NSBlockOperation
+其实除非必要，简单的工作完全可以使用官方提供的NSOperation两个子类NSInvocationOperation和NSBlockOperation来实现。
+NSInvocationOperation：
+1
+2
+3
+4
+NSInvocationOperation* theOp = [[NSInvocationOperation alloc] 
+                       initWithTarget:self                 
+                           selector:@selector(myTaskMethod:)                                           
+                               object:data];
+NSBlockOperation:
+1
+2
+3
+4
+NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
+      NSLog(@"Beginning operation.\n");
+      // Do some work.
+   }];
